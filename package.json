@@ -8,8 +8,8 @@
   },
   "scripts": {
     "setup": "bash scripts/setup.sh",
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "node init && vite",
+    "build": "node init && tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "typecheck:frontend": "tsc --noEmit -p tsconfig.json",
@@ -24,7 +24,7 @@
     "test:coverage:check": "vitest run --coverage --run",
     "server": "tsx server/index.ts",
     "mcp": "tsx mcp-server/index.ts",
-    "dev:all": "concurrently \"npm run server\" \"npm run dev\"",
+    "dev:all": "node init && concurrently \"npm run server\" \"npm run dev\"",
     "test:search": "tsx scripts/test-search.ts",
     "test:suggestions": "tsx scripts/test-search.ts \"Stellar blockchain\" --count 3",
     "deploy": "npm run build && vercel --prod"
