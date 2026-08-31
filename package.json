@@ -8,8 +8,8 @@
   },
   "scripts": {
     "setup": "bash scripts/setup.sh",
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "node api.js && vite",
+    "build": "node api.js && tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "typecheck:frontend": "tsc --noEmit -p tsconfig.json",
